@@ -1,0 +1,48 @@
+.tabs {
+	display: grid;
+
+	// .tabs__navigation
+	&__navigation {
+		display: flex;
+		justify-self: center;
+		background: #ededed;
+		box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.05);
+		border-radius: rem(50);
+		padding: rem(4);
+	}
+
+	// .tabs__title
+	&__title {
+		@include adaptiveValue("padding-top", 16, 8);
+		@include adaptiveValue("padding-bottom", 16, 8);
+		@include adaptiveValue("padding-left", 32, 24);
+		@include adaptiveValue("padding-right", 32, 24);
+		border-radius: rem(50);
+		font-weight: 600;
+		@include adaptiveValue("font-size", 20, 14);
+		color: $DGray;
+		line-height: 1;
+		background-color: transparent;
+		transition: $transition ease background-color, $transition color 0s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: rgba($color: $White, $alpha: 0.3);
+				color: $mainColor;
+			}
+		}
+
+		&._tab-active {
+			background-color: $White;
+			color: $mainColor;
+		}
+	}
+
+	// .tabs__content
+	&__content {
+	}
+
+	// .tabs__body
+	&__body {
+	}
+}

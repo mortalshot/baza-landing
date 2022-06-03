@@ -1,0 +1,183 @@
+// Заголовки, общие БЄМ блоки и проче...
+h {
+    &1 {
+        font-weight: 600;
+        @include adaptiveValue("font-size", 50, 32);
+        line-height: 1;
+    }
+    &2 {
+        font-weight: 600;
+        @include adaptiveValue("font-size", 40, 24);
+        line-height: 1;
+    }
+    &3 {
+        font-weight: 600;
+        @include adaptiveValue("font-size", 24, 18);
+        line-height: math.div(26, 24);
+    }
+}
+
+.title-h {
+    &3 {
+        font-weight: 500;
+        @include adaptiveValue("font-size", 24, 18);
+        line-height: 1;
+    }
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    padding-top: rem(20);
+    @include adaptiveValue("margin-bottom", 70, 44);
+
+    &:not(:first-child) {
+        padding-top: rem(30);
+    }
+    &:last-child {
+        @include adaptiveValue("margin-bottom", 100, 50);
+    }
+}
+
+._content {
+    h1,
+    h2,
+    h3 {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 24, 16);
+        }
+    }
+
+    p {
+        margin: rem(16) 0;
+    }
+
+    ol {
+        counter-reset: item;
+
+        li {
+            position: relative;
+            @include adaptiveValue("padding-left", 40, 24);
+            list-style-type: none;
+
+            &::before {
+                content: counter(item) ".";
+                counter-increment: item;
+                position: absolute;
+                left: 0;
+            }
+
+            & > ol {
+                counter-reset: subitem;
+
+                li {
+                    &::before {
+                        content: counter(item) "." counters(subitem, ".") " ";
+                        counter-increment: subitem;
+                    }
+                }
+            }
+        }
+    }
+
+    .table {
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: thin;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+    }
+
+    :first-child {
+        margin-top: 0;
+    }
+    :last-child {
+        margin-bottom: 0;
+    }
+}
+
+[data-goto] {
+    cursor: pointer;
+}
+
+.notification {
+    position: fixed;
+    z-index: 49;
+    top: rem(16);
+    @include adaptiveValue("right", 36, 20);
+    transform: translateX(120%);
+    opacity: 0;
+    transition: $transition ease transform, $transition opacity 0s;
+
+    &._active {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    // .notification__wrapper
+    &__wrapper {
+        display: grid;
+        align-items: flex-start;
+        @include adaptiveValue("column-gap", 20, 10);
+        grid-template-columns: rem(48) 1fr;
+        max-width: rem(473);
+        background-color: $White;
+        box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        @include adaptiveValue("padding", 24, 15);
+        position: relative;
+    }
+
+    // .notification__icon
+    &__icon {
+        width: rem(48);
+        height: rem(48);
+        border-radius: 50%;
+        background: rgba(29, 159, 58, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // .notification__text
+    &__text {
+        font-weight: 400;
+        @include adaptiveValue("font-size", 18, 14);
+        line-height: math.div(23, 18);
+        max-width: rem(357);
+
+        strong {
+            font-weight: 500;
+        }
+    }
+
+    // .notification__btn
+    &__btn {
+        position: absolute;
+        top: rem(10);
+        right: rem(10);
+        width: rem(24);
+        height: rem(24);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $Black;
+        background: url(../img/icons/close.svg) no-repeat center/contain;
+
+        @media (any-hover: hover) {
+            transition: $transition ease opacity 0s;
+
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+}

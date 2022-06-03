@@ -1,0 +1,190 @@
+<!-- <div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрыть</button>
+			<div class="popup__text">
+				Text
+			</div>
+		</div>
+	</div>
+</div> -->
+
+<div id="request" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close"></button>
+			<div class="popup__text">
+				<form action="" class="form">
+					<div class="popup__heading _content">
+						<div class="title-h3">Задайте свой вопрос</div>
+						<p>Мы пришлем ответ вам на почту</p>
+					</div>
+
+					<div class="form__row">
+						<div class="form__item col-12">
+							<input autocomplete="off" type="text" name="request-name" placeholder="Ваше имя" class="form__input">
+						</div>
+						<div class="form__item col-12">
+							<input autocomplete="off" type="email" name="request-email" placeholder="Ваша почта" class="form__input">
+						</div>
+						<div class="form__item col-12">
+							<textarea autocomplete="off" name="request-comment" placeholder="Ваш вопрос" class="form__input"></textarea>
+						</div>
+					</div>
+
+					<div class="form__submit">
+						<input type="submit" value="Задать вопрос" class="btn btn_green">
+					</div>
+					<div class="form__privacy">
+						<label>
+							<input type="checkbox" value="1" name="privacy">
+							<span class="wpcf7-list-item-label">Я соглашаюсь с правилами обработки персональных данных</span>
+						</label>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="partner" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close"></button>
+			<div class="popup__text">
+				<form action="" class="form" data-validate>
+					<div class="popup__heading _content">
+						<div class="title-h3">Стать партёром</div>
+						<p>Заполните поля, мы проверим информацию ответим вам на почту в течнии 24 часов!</p>
+					</div>
+
+					<div class="form__row">
+						<div class="form__item col-12">
+							<label for="partner-name" class="form__label">Имя</label>
+							<input id="partner-name" autocomplete="off" type="text" name="partner-name" placeholder="Ваше имя" class="form__input" required>
+						</div>
+						<div class="form__item col-12">
+							<label for="partner-phone" class="form__label">Телефон</label>
+							<input id="partner-phone" autocomplete="off" type="tel" name="partner-phone" placeholder="+7 000 000 00 00" class="form__input form__input_phone" required>
+						</div>
+						<div class="form__item col-12">
+							<label for="partner-mail" class="form__label">Почта</label>
+							<input id="partner-mail" autocomplete="off" type="text" name="partner-mail" placeholder="mynamemail@mail.ru" class="form__input form__input_mail" data-required="email" required>
+						</div>
+						<div class="form__item col-12">
+							<label for="partner-company" class="form__label">Название ИП/ООО</label>
+							<input id="partner-company" autocomplete="off" type="text" name="partner-company" placeholder="Например «ООО Название компании»" class="form__input" required>
+						</div>
+						<div class="form__item col-12">
+							<label for="partner-inn" class="form__label">ИНН</label>
+							<div class="form__input-wrapper">
+								<input id="partner-inn" autocomplete="off" type="text" name="partner-inn" placeholder="000000000000" class="form__input form__input_counter" required>
+								<div class="form__input-counter counter"><span class="counter__current">0</span> / <span class="counter__required">12</span></div>
+							</div>
+						</div>
+						<div class="form__item col-12">
+							<div class="form__input-wrapper">
+								<label for="partner-address1" class="form__label">Адрес(а) торговой точки</label>
+								<input id="partner-address1" autocomplete="off" type="text" name="partner-address1" placeholder="366918 г. Москва ул.Тверская д. 29" class="form__input" required>
+							</div>
+
+							<div class="form__add">
+								<button type="button" class="btn btn_add">Добавить адрес</button>
+							</div>
+						</div>
+					</div>
+					<div class="form__submit">
+						<input type="submit" value="Задать вопрос" class="btn btn_green">
+					</div>
+					<div class="form__privacy">
+						<label>
+							<input type="checkbox" value="1" name="privacy" required>
+							<span class="wpcf7-list-item-label">Я соглашаюсь с правилами обработки персональных данных</span>
+						</label>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="courier" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close"></button>
+			<div class="popup__text">
+				<form action="" class="form" data-validate>
+					<div class="popup__heading _content">
+						<div class="title-h3">Стать курьером</div>
+					</div>
+
+					<div class="form__row">
+						<div class="form__item col-12">
+							<label for="courier-name" class="form__label">Имя</label>
+							<input id="courier-name" autocomplete="off" type="text" name="courier-name" placeholder="Ваше имя" class="form__input" required>
+						</div>
+						<div class="form__item col-12">
+							<label for="courier-phone" class="form__label">Телефон</label>
+							<input id="courier-phone" autocomplete="off" type="tel" name="courier-phone" placeholder="+7 000 000 00 00" class="form__input form__input_phone" required>
+						</div>
+						<div class="form__item col-12">
+							<div class="form__label">Город</div>
+							<select name="" id="" class="form__city">
+								<option value="Москва">Москва</option>
+								<option value="Тверь">Тверь</option>
+								<option value="Казань">Казань</option>
+							</select>
+						</div>
+						<div class="form__item form__item_select _active col-12" data-select="Москва">
+							<div class="form__label">Район работы</div>
+							<select name="" id="">
+								<option value="Тверской район">Москва Тверской район</option>
+								<option value="Замоскворечье">Москва Замоскворечье</option>
+								<option value="Басманный">Москва Басманный</option>
+								<option value="Центральный административный округ">Москва Центральный административный округ</option>
+							</select>
+						</div>
+						<div class="form__item form__item_select col-12" data-select="Тверь">
+							<div class="form__label">Район работы</div>
+							<select name="" id="">
+								<option value="Замоскворечье">Тверь Замоскворечье</option>
+								<option value="Тверской район">Тверь Тверской район</option>
+								<option value="Басманный">Тверь Басманный</option>
+								<option value="Центральный административный округ">Тверь Центральный административный округ</option>
+							</select>
+						</div>
+						<div class="form__item form__item_select col-12" data-select="Казань">
+							<div class="form__label">Район работы</div>
+							<select name="" id="">
+								<option value="Басманный">Казань Басманный</option>
+								<option value="Тверской район">Казань Тверской район</option>
+								<option value="Замоскворечье">Казань Замоскворечье</option>
+								<option value="Центральный административный округ">Казань Центральный административный округ</option>
+							</select>
+						</div>
+					</div>
+					<div class="form__submit">
+						<input type="submit" value="Задать вопрос" class="btn btn_green">
+					</div>
+					<div class="form__privacy">
+						<label>
+							<input type="checkbox" value="1" name="privacy" required>
+							<span class="wpcf7-list-item-label">Я соглашаюсь с правилами обработки персональных данных</span>
+						</label>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="notification">
+	<div class="notification__wrapper">
+		<div class="notification__icon"><img src="@img/icons/check2.svg" alt="" loading="lazy"></div>
+		<div class="notification__text _content">
+			<p class="title-h3">Заявка успешно отправлена!</p>
+			<p>Мы пришлём вам ответ на почту <strong>mymail@mail.ru</strong> в ближайшее время</p>
+		</div>
+		<button type="button" class="notification__btn"></button>
+	</div>
+</div>

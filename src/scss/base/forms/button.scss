@@ -1,0 +1,59 @@
+//<BUTTONS (a.btn+tab)>
+// Снипет (HTML): btn
+
+.btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	@include adaptiveValue("min-height", 45, 43);
+	min-height: rem(45);
+	padding: rem(10) rem(18);
+	@include adaptiveValue("font-size", 18, 16);
+	line-height: math.div(20, 15);
+	text-align: center;
+	cursor: pointer;
+	border-radius: rem(10);
+
+	// .btn_green
+	&_green {
+		color: $White;
+		background-color: #1d9f3a;
+
+		@media (any-hover: hover) {
+			transition: $transition ease background-color 0s;
+
+			&:hover {
+				background-color: #46c269;
+			}
+		}
+	}
+	// .btn_add
+	&_add {
+		padding: rem(8);
+		border: rem(1) dashed $LGray2;
+		border-radius: rem(10);
+		width: 100%;
+		font-weight: 500;
+		font-size: rem(16);
+		line-height: math.div(21, 16);
+		text-align: left;
+		justify-content: flex-start;
+
+		&::before {
+			content: "";
+			display: block;
+			width: rem(20);
+			height: rem(20);
+			flex: 0 0 rem(20);
+			background: url(../img/icons/plus.svg) no-repeat center/contain;
+			margin-right: rem(8);
+		}
+
+		@media (any-hover: hover) {
+			transition: $transition ease border-color 0s;
+			&:hover {
+				border: rem(1) dashed $mainColor;
+			}
+		}
+	}
+}
